@@ -61,6 +61,62 @@
   gap: 12px;
 }
 
+.section {
+  margin-bottom: 24px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.sectionText {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.queueSummary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.summaryCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.summaryLabel {
+  display: block;
+  color: #64748b;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.summaryValue {
+  display: block;
+  color: #0f172a;
+  font-size: 22px;
+  line-height: 1;
+}
+
 .select {
   padding: 8px 12px;
   border: 1px solid #e2e8f0;
@@ -124,6 +180,34 @@
 .status_queued { background: #fef9c3; color: #854d0e; }
 .status_dry_run_completed { background: #e0e7ff; color: #3730a3; }
 
+.queueState_waiting,
+.queueState_prioritized,
+.queueState_delayed {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.queueState_waiting {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.queueState_prioritized {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.queueState_delayed {
+  background: #fef3c7;
+  color: #b45309;
+}
+
 .btn {
   padding: 6px 12px;
   background: #0f172a;
@@ -136,6 +220,32 @@
 
 .btn:hover {
   background: #1e293b;
+}
+
+.dangerBtn {
+  padding: 6px 12px;
+  background: #fff;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.dangerBtn:hover {
+  background: #fef2f2;
+}
+
+.dangerBtn:disabled,
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.actionsCell {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
 }
 
 .pagination {
@@ -166,4 +276,15 @@
 
 .error {
   color: #dc2626;
+}
+
+@media (max-width: 1100px) {
+  .queueSummary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .actionsCell {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
